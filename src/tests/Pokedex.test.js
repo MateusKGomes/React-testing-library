@@ -17,17 +17,6 @@ describe('Teste o componente <Pokedex.js />', () => {
     userEvent.click(nextButton);
     const charmander = screen.getByText(/charmander/i);
     expect(charmander).toBeInTheDocument();
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // userEvent.click(nextButton);
-    // const pikachu = screen.getByText(/pikachu/i);
-    // expect(pikachu).toBeInTheDocument();
   });
   test('Teste se é mostrado apenas um Pokémon por vez', () => {
     renderWithRouter(<App />);
@@ -68,5 +57,8 @@ describe('Teste o componente <Pokedex.js />', () => {
     userEvent.click(nextButton);
     const caterpie = screen.getByText(/caterpie/i);
     expect(caterpie).toBeInTheDocument();
+    expect(allButton).toBeInTheDocument();
+    userEvent.click(allButton);
+    expect(screen.getByText(/pikachu/i)).toBeInTheDocument();
   });
 });
